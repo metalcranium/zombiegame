@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhe4dewjyg6mw"]
+
+[ext_resource type="Texture2D" uid="uid://ruso58xavn6x" path="res://healthpot.png" id="1_jgbmg"]
+[ext_resource type="Script" path="res://health_potion_pickup.gd" id="1_litix"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wk5wa"]
+
+[node name="HealthPotionPickup" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_litix")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jgbmg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.94873, 2.0196)
+shape = SubResource("RectangleShape2D_wk5wa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

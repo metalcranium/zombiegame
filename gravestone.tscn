@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://lb0mp61qowoo"]
+
+[ext_resource type="Texture2D" uid="uid://b74ot6bavyl4p" path="res://gravestone.png" id="1_0srub"]
+
+[node name="GraveStone" type="Sprite2D"]
+position = Vector2(-1, 0)
+texture = ExtResource("1_0srub")

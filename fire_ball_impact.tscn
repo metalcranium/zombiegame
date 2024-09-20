@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://5d12048fgkgv"]
+
+[ext_resource type="Script" path="res://fire_ball_impact.gd" id="1_jmman"]
+[ext_resource type="Texture2D" uid="uid://bcb2pc4f04mgv" path="res://fireballimpact_0001.png" id="1_qjjv2"]
+[ext_resource type="Texture2D" uid="uid://dayw8d0itj0rr" path="res://fireballimpact_0002.png" id="2_sybbt"]
+[ext_resource type="Texture2D" uid="uid://cy38wcw1203jg" path="res://fireballimpact_0003.png" id="3_usn03"]
+[ext_resource type="Texture2D" uid="uid://jntawghgyum2" path="res://fireballimpact_0004.png" id="4_3efoh"]
+[ext_resource type="Texture2D" uid="uid://bddr5on0osfnh" path="res://fireballimpact_0005.png" id="5_oos7u"]
+[ext_resource type="PackedScene" uid="uid://bnaiiqdyidsbu" path="res://kill_enemy.tscn" id="7_k1ojv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v1od8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qjjv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sybbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_usn03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3efoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oos7u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="FireBallImpact" type="Node2D"]
+script = ExtResource("1_jmman")
+
+[node name="KillEnemy" parent="." instance=ExtResource("7_k1ojv")]
+position = Vector2(-2, -1)
+scale = Vector2(6.16, 6.30744)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -1)
+scale = Vector2(4.1832, 3.61269)
+sprite_frames = SubResource("SpriteFrames_v1od8")
+autoplay = "default"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
