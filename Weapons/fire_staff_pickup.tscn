@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://8vm85fa468si"]
+
+[ext_resource type="Script" path="res://Weapons/fire_staff_pickup.gd" id="1_1v0kx"]
+[ext_resource type="Texture2D" uid="uid://bdlihnyxgpyqj" path="res://Assets/firestaff.png" id="2_py7eg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4o0sn"]
+size = Vector2(34, 34)
+
+[node name="FireStaffPickup" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_1v0kx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_py7eg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4o0sn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

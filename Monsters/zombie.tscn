@@ -1,0 +1,135 @@
+[gd_scene load_steps=17 format=3 uid="uid://ceyi62srb6cm8"]
+
+[ext_resource type="Script" path="res://Monsters/zombie.gd" id="1_d7l0j"]
+[ext_resource type="Texture2D" uid="uid://b4v2khbrwb5ki" path="res://Assets/zombiewalkpng.png" id="2_1r2nh"]
+[ext_resource type="PackedScene" uid="uid://caqyngauv4akj" path="res://Monsters/kill_zone.tscn" id="3_jes1e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kxo3"]
+bg_color = Color(0.0214346, 0.0214346, 0.0214346, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glivg"]
+bg_color = Color(0.736097, 0, 0.126738, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlcdb"]
+atlas = ExtResource("2_1r2nh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wej4c"]
+atlas = ExtResource("2_1r2nh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnvgl"]
+atlas = ExtResource("2_1r2nh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8kku"]
+atlas = ExtResource("2_1r2nh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxqdj"]
+atlas = ExtResource("2_1r2nh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goo75"]
+atlas = ExtResource("2_1r2nh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_piwft"]
+atlas = ExtResource("2_1r2nh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwkmu"]
+atlas = ExtResource("2_1r2nh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xgyq7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlcdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wej4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnvgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8kku")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxqdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goo75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_piwft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwkmu")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lqxtb"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_as8y5"]
+radius = 220.293
+
+[node name="Zombie" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_d7l0j")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_left = 13.0
+offset_top = -20.0
+offset_right = 17.0
+offset_bottom = 7.0
+rotation = 1.57385
+theme_override_styles/background = SubResource("StyleBoxFlat_7kxo3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_glivg")
+max_value = 10.0
+value = 10.0
+rounded = true
+fill_mode = 3
+show_percentage = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_xgyq7")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="KillZone" parent="." instance=ExtResource("3_jes1e")]
+position = Vector2(5.68434e-14, 1)
+rotation = 0.00159589
+scale = Vector2(1.6947, 1.43736)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_lqxtb")
+
+[node name="AttackTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DetectPlayer" type="Area2D" parent="."]
+scale = Vector2(0.877894, 0.894349)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayer"]
+shape = SubResource("CircleShape2D_as8y5")
+
+[connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]
+[connection signal="body_exited" from="KillZone" to="." method="_on_kill_zone_body_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="DetectPlayer" to="." method="_on_detect_player_body_entered"]

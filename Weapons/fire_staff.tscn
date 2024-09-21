@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://1lvfl6w33uvj"]
+
+[ext_resource type="Script" path="res://Weapons/fire_staff.gd" id="1_gl3m1"]
+[ext_resource type="Texture2D" uid="uid://bdlihnyxgpyqj" path="res://Assets/firestaff.png" id="2_jn7v4"]
+
+[node name="FireStaff" type="Node2D"]
+script = ExtResource("1_gl3m1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-11, 0)
+texture = ExtResource("2_jn7v4")

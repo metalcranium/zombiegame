@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnhfdbw2gh77v"]
 
-[ext_resource type="Script" path="res://start_screen.gd" id="1_o5l5x"]
+[ext_resource type="Script" path="res://Scenes/start_screen.gd" id="1_s6ut1"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -14,7 +14,7 @@ offset_bottom = 420.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.384905, 0.630803)
-script = ExtResource("1_o5l5x")
+script = ExtResource("1_s6ut1")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0

@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlrtjl2h521l1"]
+
+[ext_resource type="Script" path="res://Weapons/fire_ball.gd" id="1_g6wup"]
+[ext_resource type="Texture2D" uid="uid://c3oeixe55hekd" path="res://Assets/fireball.png" id="2_2b6ut"]
+[ext_resource type="PackedScene" uid="uid://bnaiiqdyidsbu" path="res://Character/kill_enemy.tscn" id="8_66g6w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2kwtk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2b6ut")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vd8ss"]
+
+[node name="FireBall" type="Node2D"]
+position = Vector2(2, 0)
+script = ExtResource("1_g6wup")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_2kwtk")
+animation = &"shoot"
+
+[node name="KillEnemy" parent="." instance=ExtResource("8_66g6w")]
+position = Vector2(0, 1)
+scale = Vector2(0.944444, 0.47)
+collision_mask = 12
+script = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.560001)
+shape = SubResource("CircleShape2D_vd8ss")
+
+[connection signal="body_entered" from="KillEnemy" to="." method="_on_kill_enemy_body_entered"]
