@@ -3,7 +3,7 @@ extends CharacterBody2D
 var level: int = 1
 var damage: int = 1
 var max_health: float = 150
-var health: float = max_health
+var health: float = 10
 var max_mana: float = 100
 var mana: float = max_mana
 var max_xp: float = 100
@@ -25,6 +25,7 @@ var can_melee: bool = false
 @onready var corruption_bar: ProgressBar = $ProgressBar3
 @onready var xp_bar: ProgressBar = $ProgressBar4
 var current_weapon: Node2D = null
+var current_item: Node2D = null
 @onready var tool_bar_slots: Control = $ToolBar
 @onready var death_timer: Timer = $DeathTimer
 
@@ -76,13 +77,6 @@ func _physics_process(delta: float) -> void:
 				current_weapon.count -= 1
 				if current_weapon.count <= 0:
 					tool_bar_slots.drop_item(tool_bar_slots.current_item)
-			# if Input.is_action_pressed("drop_weapon"):
-			# 	current_weapon.drop()
-		
-func drop_item():
-	print("weapon dropped")
-	
-	print("weapon in world")
 			
 func die():
 	print("dead")
@@ -106,6 +100,8 @@ func level_up():
 	main.zombie_count = 0
 func get_tool_bar():
 	return tool_bar
+func get_inventory():
+	return inventory
 
 func punch(body: Node2D):
 	if Input.is_action_just_pressed("fire") and can_melee == true:

@@ -8,7 +8,6 @@ var current_item = null
 func _ready() -> void:
 	#slots = get_parent().get_tool_bar()
 	pass
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	slots = get_parent().get_tool_bar()
@@ -46,7 +45,7 @@ func select_item(index):
 		get_parent().current_weapon = get_parent().tool_bar[index]
 		print(get_parent().current_weapon)
 	else:
-		pass
+		get_parent().current_weapon = null
 func drop_item(index):
 	if slots[index]:
 		slots[index] = null

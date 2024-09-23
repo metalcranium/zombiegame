@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://p26p8upa05vb"]
+[gd_scene load_steps=2 format=3 uid="uid://p26p8upa05vb"]
 
 [ext_resource type="Script" path="res://Items/inv.gd" id="1_kbsux"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2aorj"]
-bg_color = Color(0.241156, 0.241156, 0.241156, 1)
 
 [node name="Inv" type="Control"]
 z_index = 2
@@ -30,66 +27,83 @@ offset_bottom = -1080.38
 scale = Vector2(3.56466, 3.38012)
 columns = 4
 
-[node name="PanelContainer1" type="PanelContainer" parent="Control/GridContainer"]
+[node name="PanelContainer1" type="Button" parent="Control/GridContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2aorj")
 
 [node name="SlotImage" type="TextureRect" parent="Control/GridContainer/PanelContainer1"]
 layout_mode = 2
+offset_right = 32.0
+offset_bottom = 32.0
 
-[node name="PanelContainer2" type="PanelContainer" parent="Control/GridContainer"]
+[node name="PanelContainer2" type="Button" parent="Control/GridContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2aorj")
 
 [node name="SlotImage" type="TextureRect" parent="Control/GridContainer/PanelContainer2"]
 layout_mode = 2
+offset_right = 32.0
+offset_bottom = 32.0
 
-[node name="PanelContainer3" type="PanelContainer" parent="Control/GridContainer"]
+[node name="PanelContainer3" type="Button" parent="Control/GridContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2aorj")
 
 [node name="SlotImage" type="TextureRect" parent="Control/GridContainer/PanelContainer3"]
 layout_mode = 2
+offset_right = 32.0
+offset_bottom = 32.0
 
-[node name="PanelContainer4" type="PanelContainer" parent="Control/GridContainer"]
+[node name="PanelContainer4" type="Button" parent="Control/GridContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2aorj")
 
 [node name="SlotImage" type="TextureRect" parent="Control/GridContainer/PanelContainer4"]
 layout_mode = 2
+offset_right = 32.0
+offset_bottom = 32.0
 
-[node name="PanelContainer5" type="PanelContainer" parent="Control/GridContainer"]
+[node name="PanelContainer5" type="Button" parent="Control/GridContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2aorj")
 
 [node name="SlotImage" type="TextureRect" parent="Control/GridContainer/PanelContainer5"]
 layout_mode = 2
+offset_right = 32.0
+offset_bottom = 32.0
 
-[node name="PanelContainer6" type="PanelContainer" parent="Control/GridContainer"]
+[node name="PanelContainer6" type="Button" parent="Control/GridContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2aorj")
 
 [node name="SlotImage" type="TextureRect" parent="Control/GridContainer/PanelContainer6"]
 layout_mode = 2
+offset_right = 32.0
+offset_bottom = 32.0
 
-[node name="PanelContainer7" type="PanelContainer" parent="Control/GridContainer"]
+[node name="PanelContainer7" type="Button" parent="Control/GridContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2aorj")
 
 [node name="SlotImage" type="TextureRect" parent="Control/GridContainer/PanelContainer7"]
 layout_mode = 2
+offset_right = 32.0
+offset_bottom = 32.0
 
-[node name="PanelContainer8" type="PanelContainer" parent="Control/GridContainer"]
+[node name="PanelContainer8" type="Button" parent="Control/GridContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2aorj")
 
 [node name="SlotImage" type="TextureRect" parent="Control/GridContainer/PanelContainer8"]
 layout_mode = 2
+offset_right = 32.0
+offset_bottom = 32.0
+
+[connection signal="pressed" from="Control/GridContainer/PanelContainer1" to="." method="_on_panel_container_1_pressed"]
+[connection signal="pressed" from="Control/GridContainer/PanelContainer2" to="." method="_on_panel_container_2_pressed"]
+[connection signal="pressed" from="Control/GridContainer/PanelContainer3" to="." method="_on_panel_container_3_pressed"]
+[connection signal="pressed" from="Control/GridContainer/PanelContainer4" to="." method="_on_panel_container_4_pressed"]
+[connection signal="pressed" from="Control/GridContainer/PanelContainer5" to="." method="_on_panel_container_5_pressed"]
+[connection signal="pressed" from="Control/GridContainer/PanelContainer6" to="." method="_on_panel_container_6_pressed"]
+[connection signal="pressed" from="Control/GridContainer/PanelContainer7" to="." method="_on_panel_container_7_pressed"]
+[connection signal="pressed" from="Control/GridContainer/PanelContainer8" to="." method="_on_panel_container_8_pressed"]

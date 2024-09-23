@@ -445,4 +445,25 @@ position = Vector2(348, 1378)
 position = Vector2(456, 1379)
 
 [node name="HealthPotionPickup" parent="." instance=ExtResource("8_0hiii")]
-position = Vector2(394, 1325)
+position = Vector2(406, 1314)
+
+[node name="HealthPotionPickup2" parent="." instance=ExtResource("8_0hiii")]
+position = Vector2(454, 1200)
+
+[node name="HealthPotionPickup3" parent="." instance=ExtResource("8_0hiii")]
+position = Vector2(496, 1392)
+
+[node name="HealthPotionPickup4" parent="." instance=ExtResource("8_0hiii")]
+position = Vector2(366, 1275)
+
+[node name="HealthPotionPickup5" parent="." instance=ExtResource("8_0hiii")]
+position = Vector2(461, 1302)
+
+[node name="HealthPotionPickup6" parent="." instance=ExtResource("8_0hiii")]
+position = Vector2(596, 1268)
+
+[node name="HealthPotionPickup7" parent="." instance=ExtResource("8_0hiii")]
+position = Vector2(511, 1217)
+
+[node name="HealthPotionPickup8" parent="." instance=ExtResource("8_0hiii")]
+position = Vector2(387, 1192)

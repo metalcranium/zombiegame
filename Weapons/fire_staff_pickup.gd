@@ -22,10 +22,6 @@ func _on_body_exited(body:Node2D) -> void:
 	can_pickup = false
 	hero = null
 
-
-
-
-
 func _on_body_entered(body: Node2D):
 	can_pickup = true
 	hero = body
