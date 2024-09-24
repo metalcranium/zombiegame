@@ -39,7 +39,6 @@ func _on_timer_timeout() -> void:
 func die():
 	print("Enemy died")
 	print("You gained ", + xp_value," xp points!")
-	hero.xp += xp_value
 	main.score += 1
 	drop_orb()
 	queue_free()
@@ -65,5 +64,6 @@ func _on_detect_body_exited(body: Node2D) -> void:
 
 func drop_orb():
 	var light = orb.instantiate()
+	light.xp_value = xp_value
 	light.position = position
 	main.add_child(light)

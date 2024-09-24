@@ -3,7 +3,7 @@ extends CharacterBody2D
 var level: int = 1
 var damage: int = 1
 var max_health: float = 150
-var health: float = 10
+var health: float = max_health
 var max_mana: float = 100
 var mana: float = max_mana
 var max_xp: float = 100
