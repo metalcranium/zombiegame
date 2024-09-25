@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://67d41iir2t5q"]
+
+[ext_resource type="PackedScene" uid="uid://bd4jjf4qgt2pl" path="res://Weapons/arrow.tscn" id="1_wppk5"]
+
+[node name="ArrowBlast" type="Node2D"]
+
+[node name="arrow1" parent="." instance=ExtResource("1_wppk5")]
+
+[node name="arrow2" parent="." instance=ExtResource("1_wppk5")]
+rotation = 0.785398
+
+[node name="arrow3" parent="." instance=ExtResource("1_wppk5")]
+rotation = 1.5708
+
+[node name="arrow4" parent="." instance=ExtResource("1_wppk5")]
+rotation = 2.35619
+
+[node name="arrow5" parent="." instance=ExtResource("1_wppk5")]
+rotation = 3.14159
+
+[node name="arrow6" parent="." instance=ExtResource("1_wppk5")]
+rotation = 3.92699
+
+[node name="arrow7" parent="." instance=ExtResource("1_wppk5")]
+rotation = 4.62512
+
+[node name="arrow8" parent="." instance=ExtResource("1_wppk5")]
+position = Vector2(0, 0)
+rotation = 5.49779

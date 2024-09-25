@@ -6,9 +6,8 @@ var health: int = max_health
 const speed: float = 50                   
 var current_speed = speed
 const xp_value: float = 15
-
+var can_attack: bool = false
 @onready var progress_bar: ProgressBar = $ProgressBar
-@onready var hero = get_node("/root/Main/Hero")
 @onready var main = get_node("/root/Main")
 @onready var dark_fireball = preload("res://Weapons/dark_fireball.tscn")
 @onready var orb = preload("res://Scenes/light_orb.tscn")
@@ -16,26 +15,25 @@ const xp_value: float = 15
 var target: Node2D = null
 
 func _ready():
-	target = hero
-	
-func _physics_process(delta: float) -> void:
+	pass
+func _physics_process(_delta: float) -> void:
 	progress_bar.value = health
-	if target == null:
-		idle()
-	else:
+	if target != null:
 		velocity = position.direction_to(target.position).normalized() * current_speed
 		chase()
+		
+	else:
+		idle()
 	
 	move_and_slide()
 	if health <= 0:
 		die()
 
 func _on_kill_zone_body_entered(body: Node2D) -> void:
-	body.health -= 5
+	body.corruption -= 5
 
 func _on_timer_timeout() -> void:
 	shoot()
-	timer.start()
 func die():
 	print("Enemy died")
 	print("You gained ", + xp_value," xp points!")
@@ -50,15 +48,18 @@ func chase():
 	elif velocity.x < 0:
 		$AnimatedSprite2D.flip_h = true
 func shoot():
-	var dark_fb = dark_fireball.instantiate()
-	dark_fb.position = position
-	main.add_child(dark_fb)
+		var dark_fb = dark_fireball.instantiate()
+		dark_fb.target = target
+		dark_fb.position = position
+		main.add_child(dark_fb)
+		can_attack = false
+		timer.start()
 
 func _on_detect_body_entered(body: Node2D) -> void:
-	target = body
-	current_speed = 0
-
-
+		target = body
+		current_speed = 0
+		chase()
+		timer.start()
 func _on_detect_body_exited(body: Node2D) -> void:
 	current_speed = speed
 

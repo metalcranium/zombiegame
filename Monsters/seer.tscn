@@ -48,7 +48,6 @@ shape = SubResource("CapsuleShape2D_i3gja")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
-autostart = true
 
 [node name="Detect" type="Area2D" parent="."]
 scale = Vector2(0.893796, 0.957471)

@@ -6,7 +6,7 @@ const speed: float = 300.0
 var damage: int = 8
 
 func _ready():
-	look_at(get_global_mouse_position())
+	#look_at(get_global_mouse_position())
 	$Sprite2D.flip_h = true
 	
 func _process(delta: float) -> void:

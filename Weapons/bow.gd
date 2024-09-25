@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var main = get_node("/root/Main")
 @onready var image_texture = preload("res://Assets/bow.png")
 @onready var arrow = preload("res://Weapons/arrow.tscn")
+@onready var arrow_blast = preload("res://Weapons/arrow_blast.tscn")
 const weapon_type: String = "ranged"
 var attack_rate: float = 1.0
 func _ready():
@@ -13,7 +14,7 @@ func _process(_delta):
 	$Sprite2D.flip_h = true
 	
 func fire():
-	var ammo = arrow.instantiate()
+	var ammo = arrow_blast.instantiate()
 	ammo.position = get_parent().position
 	main.add_child(ammo)
 	
