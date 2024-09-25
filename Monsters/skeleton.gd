@@ -7,12 +7,14 @@ var current_speed: int = speed
 var target: Node2D = null
 @onready var health_bar: ProgressBar = $HealthBar
 @onready var attack_timer: Timer = $AttackTimer
+@onready var orb = preload("res://Scenes/light_orb.tscn")
+@onready var main = get_node("/root/Main")
+var xp_value = 15
 var can_attack: bool = false
 func _ready():
 	pass
 func _physics_process(delta: float) -> void:
 	health_bar.value = health
-	health_bar.max_value = health
 	if target != null:
 		velocity = position.direction_to(target.position).normalized() * current_speed
 	else:
@@ -20,6 +22,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	if can_attack == true:
 		attack()
+	if health <= 0:
+		die()
 
 
 func _on_detect_player_body_entered(body:Node2D) -> void:
@@ -39,11 +43,15 @@ func attack():
 		attack_timer.start(1)
 	else:
 		pass
+func die():
+	drop_orb()
+	queue_free()
 
-
+func drop_orb():
+	var light = orb.instantiate()
+	light.position = position
+	light.xp_value = xp_value
+	main.add_child(light)
 
 func _on_attack_timer_timeout() -> void:
-	pass # Replace with function body.
-
-func _on_attack_timer_timeout() -> void:
-	pass # Replace with function body.
+	can_attack = true
