@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-@onready var hero = get_node("/root/Main/Hero")
 @onready var main = get_node("/root/Main")
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var gravestone = preload("res://Scenes/gravestone.tscn")
@@ -59,10 +58,10 @@ func idle():
 	$AnimatedSprite2D.animation = "idle"
 func chase():
 	current_speed = speed
-	if position.x < hero.position.x:
+	if position.x < target.position.x:
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_h = false
-	elif position.x > hero.position.x:
+	elif position.x > target.position.x:
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_h = true
 	

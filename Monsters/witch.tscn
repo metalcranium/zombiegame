@@ -18,6 +18,7 @@ animations = [{
 size = Vector2(64, 64)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_43qyw"]
+radius = 9.54563
 
 [node name="Witch" type="CharacterBody2D"]
 collision_layer = 4
@@ -38,6 +39,21 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(22, 17.3889)
 shape = SubResource("CircleShape2D_43qyw")
+
+[node name="SpiderSpawner1" type="Marker2D" parent="."]
+position = Vector2(0, 61)
+
+[node name="SpiderSpawner2" type="Marker2D" parent="."]
+position = Vector2(-58, 25)
+
+[node name="SpiderSpawner3" type="Marker2D" parent="."]
+position = Vector2(56, 28)
+
+[node name="SpiderSpawner4" type="Marker2D" parent="."]
+position = Vector2(-41, -39)
+
+[node name="SpiderSpawner5" type="Marker2D" parent="."]
+position = Vector2(41, -39)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
