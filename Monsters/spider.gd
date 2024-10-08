@@ -6,9 +6,7 @@ var speed: int = 100
 @onready var hero = get_node("/root/Main/Hero")
 var target: Node2D = null
 func _ready():
-	#target = get_parent().target
-	target = hero
-	print("spider")
+	print("spider", + position)
 func _physics_process(_delta: float) -> void:
 	if target != null:
 		velocity = position.direction_to(target.position).normalized() * speed

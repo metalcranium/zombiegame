@@ -50,7 +50,7 @@ position = Vector2(-58, 25)
 position = Vector2(56, 28)
 
 [node name="SpiderSpawner4" type="Marker2D" parent="."]
-position = Vector2(-41, -39)
+position = Vector2(-41, -40)
 
 [node name="SpiderSpawner5" type="Marker2D" parent="."]
 position = Vector2(41, -39)
