@@ -32,7 +32,7 @@ var current_item: Node2D = null
 func _ready():
 	pass
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	health_bar.value = health
 	health_bar.max_value = max_health
 	mana_bar.value = mana
@@ -41,19 +41,17 @@ func _physics_process(delta: float) -> void:
 	corruption_bar.max_value = max_corruption
 	xp_bar.value = xp
 	xp_bar.max_value = max_xp
+	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	velocity = direction * speed
 	if Input.is_action_pressed("move_left"):
-		position.x -= speed * delta
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_h = false
 	elif Input.is_action_pressed("move_right"):
-		position.x += speed * delta
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_h = true
 	elif Input.is_action_pressed("move_up"):
-		position.y -= speed * delta
 		$AnimatedSprite2D.animation = "walk"
 	elif Input.is_action_pressed("move_down"):
-		position.y += speed * delta
 		$AnimatedSprite2D.animation = "walk"
 	else:
 		$AnimatedSprite2D.animation = "idle"
