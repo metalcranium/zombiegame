@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 		is_visible = !is_visible
 		if !is_visible:
 			hide()
-			get_parent().selected_item = null
+			get_parent().current_item = null
 		else:
 			show()
 	if Input.is_action_just_pressed("use_item"):
@@ -31,9 +31,10 @@ func _process(_delta: float) -> void:
 		else:
 			print("health is full")
 			pass
+	if Input.is_action_pressed("fire"):
+		pass
 
 func update_inventory():
-	slots = get_parent().get_inventory()
 	for i in range(len(slots)):
 		if slots[i] != null:
 			slot_images[i].texture = slots[i].image_texture
@@ -79,3 +80,19 @@ func _on_panel_container_7_pressed() -> void:
 func _on_panel_container_8_pressed() -> void:
 	current_item = 7
 	select_item(current_item)
+
+
+
+func _on_panel_container_2_mouse_exited() -> void:
+	pass # Replace with function body.
+
+
+func _on_panel_container_2_mouse_entered() -> void:
+	pass # Replace with function body.
+
+
+func _on_panel_container_1_mouse_exited() -> void:
+	pass # Replace with function body.
+
+func _on_panel_container_1_mouse_entered() -> void:
+	pass # Replace with function body.

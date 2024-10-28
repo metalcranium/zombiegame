@@ -99,7 +99,11 @@ layout_mode = 2
 offset_right = 32.0
 offset_bottom = 32.0
 
+[connection signal="mouse_entered" from="Control/GridContainer/PanelContainer1" to="." method="_on_panel_container_1_mouse_entered"]
+[connection signal="mouse_exited" from="Control/GridContainer/PanelContainer1" to="." method="_on_panel_container_1_mouse_exited"]
 [connection signal="pressed" from="Control/GridContainer/PanelContainer1" to="." method="_on_panel_container_1_pressed"]
+[connection signal="mouse_entered" from="Control/GridContainer/PanelContainer2" to="." method="_on_panel_container_2_mouse_entered"]
+[connection signal="mouse_exited" from="Control/GridContainer/PanelContainer2" to="." method="_on_panel_container_2_mouse_exited"]
 [connection signal="pressed" from="Control/GridContainer/PanelContainer2" to="." method="_on_panel_container_2_pressed"]
 [connection signal="pressed" from="Control/GridContainer/PanelContainer3" to="." method="_on_panel_container_3_pressed"]
 [connection signal="pressed" from="Control/GridContainer/PanelContainer4" to="." method="_on_panel_container_4_pressed"]

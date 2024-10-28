@@ -17,6 +17,7 @@ var tool_bar = [null,null,null,null]
 var inventory = [null,null,null,null,
 				null,null,null,null]
 var can_melee: bool = false
+var item_to_drop: Node2D = null
 
 @onready var health_bar: ProgressBar = $ProgressBar
 @onready var main = get_node("/root/Main")
