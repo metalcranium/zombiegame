@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ccmnoknb7kqw4"]
 
 [ext_resource type="Script" path="res://Items/health_potion.gd" id="1_kp666"]
-[ext_resource type="Texture2D" uid="uid://8p0ira3cp63y" path="res://Assets/healthpot.png" id="2_7b1m4"]
+[ext_resource type="Texture2D" uid="uid://4n5k28f2p1s5" path="res://Items/healthpot.png" id="2_eq1ng"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oooui"]
 
@@ -14,7 +14,7 @@ script = ExtResource("1_kp666")
 shape = SubResource("RectangleShape2D_oooui")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_7b1m4")
+texture = ExtResource("2_eq1ng")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -6,6 +6,7 @@ var value = 50
 const max_count = 10
 var count = 1
 var can_drag: bool = false
+@onready var health_potion = preload("res://Items/health_potion.tscn")
 
 func _process(_delta: float):
 	if can_drag:

@@ -14,8 +14,7 @@ var speed: float = 150
 var has_weapon: bool = false
 var can_attack: bool = true
 var tool_bar = [null,null,null,null]
-var inventory = [null,null,null,null,
-				null,null,null,null]
+var inventory = [null,null]#,null,null,null,null,null,null]
 var can_melee: bool = false
 var item_to_drop: Node2D = null
 
@@ -29,7 +28,7 @@ var current_weapon: Node2D = null
 var current_item: Node2D = null
 @onready var tool_bar_slots: Control = $ToolBar
 @onready var death_timer: Timer = $DeathTimer
-
+@onready var inv: Control = $Inventory
 func _ready():
 	pass
 	
@@ -76,7 +75,6 @@ func _physics_process(_delta: float) -> void:
 				current_weapon.count -= 1
 				if current_weapon.count <= 0:
 					tool_bar_slots.drop_item(tool_bar_slots.current_item)
-			
 func die():
 	print("dead")
 	$AnimatedSprite2D.animation = "die"
