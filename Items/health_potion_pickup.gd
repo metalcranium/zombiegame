@@ -7,13 +7,13 @@ var hero: Node2D = null
 func _process(_delta: float) -> void:
 	if Input.is_action_pressed("interact") and can_pickup == true:
 		var hp = health_potion.instantiate()
-		hero.add_child(hp)
 		for i in hero.inventory.size():
 			if hero.inventory[i] != null:
 				pass
 			else:
 				hero.inventory[i] = hp
 				queue_free()
+				
 				break
 		
 
