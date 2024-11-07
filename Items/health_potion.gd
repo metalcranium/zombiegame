@@ -1,13 +1,13 @@
-extends Node2D
+extends Sprite2D
 
 
-@onready var image_texture = load("res://Assets/healthpot.png")
+@onready var image_texture = preload("res://Assets/healthpot.png")
 const weapon_type: String = "consumable"
 var value = 50
 const max_count = 10
 var count = 1
 var can_drag: bool = false
-@onready var health_potion = load("res://Items/health_potion.tscn")
+@onready var health_potion = preload("res://Items/health_potion.tscn")
 
 func _process(_delta: float):
 	if can_drag:

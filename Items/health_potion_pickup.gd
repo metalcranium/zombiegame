@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var health_potion = load("res://Items/health_potion.tscn")
+@onready var health_potion = preload("res://Items/health_potion.tscn")
 var can_pickup: bool = false
 var hero: Node2D = null
 
