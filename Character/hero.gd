@@ -15,6 +15,7 @@ var has_weapon: bool = false
 var can_attack: bool = true
 var tool_bar = [null,null,null,null]
 var inventory = [null,null]#,null,null,null,null,null,null]
+var inventory_size: int = 16
 var can_melee: bool = false
 var item_to_drop: Node2D = null
 
@@ -31,7 +32,6 @@ var current_item: Node2D = null
 @onready var inv: Control = $Inventory
 func _ready():
 	pass
-	
 func _physics_process(_delta: float) -> void:
 	health_bar.value = health
 	health_bar.max_value = max_health
