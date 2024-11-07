@@ -31,7 +31,9 @@ var current_item: Node2D = null
 @onready var death_timer: Timer = $DeathTimer
 @onready var inv: Control = $Inventory
 func _ready():
-	pass
+	inventory.resize(inventory_size)
+	for i in inventory.size():
+		inventory[i] = null
 func _physics_process(_delta: float) -> void:
 	health_bar.value = health
 	health_bar.max_value = max_health

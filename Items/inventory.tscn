@@ -15,7 +15,7 @@ script = ExtResource("1_xasiy")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-columns = 2
+columns = 4
 
 [node name="Button1" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(32, 32)
@@ -37,7 +37,175 @@ offset_right = 32.0
 offset_bottom = 32.0
 expand_mode = 1
 
+[node name="Button3" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Button3"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+expand_mode = 1
+
+[node name="Button4" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Button4"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+expand_mode = 1
+
+[node name="Button5" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Button5"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+expand_mode = 1
+
+[node name="Button6" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Button6"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+expand_mode = 1
+
+[node name="Button7" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Button7"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+expand_mode = 1
+
+[node name="Button8" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Button8"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+expand_mode = 1
+
+[node name="Button9" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Button9"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+expand_mode = 1
+
+[node name="Button10" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Button10"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+expand_mode = 1
+
+[node name="Button11" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Button11"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+expand_mode = 1
+
+[node name="Button12" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Button12"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+expand_mode = 1
+
+[node name="Button13" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Button13"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+expand_mode = 1
+
+[node name="Button14" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Button14"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+expand_mode = 1
+
+[node name="Button15" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Button15"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+expand_mode = 1
+
+[node name="Button16" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Button16"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+expand_mode = 1
+
 [connection signal="mouse_entered" from="GridContainer/Button1" to="." method="_on_button_1_mouse_entered"]
 [connection signal="mouse_exited" from="GridContainer/Button1" to="." method="_on_button_1_mouse_exited"]
 [connection signal="mouse_entered" from="GridContainer/Button2" to="." method="_on_button_2_mouse_entered"]
 [connection signal="mouse_exited" from="GridContainer/Button2" to="." method="_on_button_2_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Button3" to="." method="_on_button_3_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Button3" to="." method="_on_button_3_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Button4" to="." method="_on_button_4_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Button4" to="." method="_on_button_4_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Button5" to="." method="_on_button_5_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Button5" to="." method="_on_button_5_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Button6" to="." method="_on_button_6_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Button6" to="." method="_on_button_6_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Button7" to="." method="_on_button_7_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Button7" to="." method="_on_button_7_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Button8" to="." method="_on_button_8_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Button8" to="." method="_on_button_8_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Button9" to="." method="_on_button_9_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Button9" to="." method="_on_button_9_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Button10" to="." method="_on_button_10_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Button10" to="." method="_on_button_10_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Button11" to="." method="_on_button_11_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Button11" to="." method="_on_button_11_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Button12" to="." method="_on_button_12_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Button12" to="." method="_on_button_12_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Button13" to="." method="_on_button_13_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Button13" to="." method="_on_button_13_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Button14" to="." method="_on_button_14_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Button14" to="." method="_on_button_14_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Button15" to="." method="_on_button_15_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Button15" to="." method="_on_button_15_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Button16" to="." method="_on_button_16_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Button16" to="." method="_on_button_16_mouse_exited"]
