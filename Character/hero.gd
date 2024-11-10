@@ -31,6 +31,7 @@ var current_item: Node2D = null
 @onready var death_timer: Timer = $DeathTimer
 @onready var inv: Control = $Inventory
 func _ready():
+	health = 100
 	inventory.resize(inventory_size)
 	for i in inventory.size():
 		inventory[i] = null
@@ -72,11 +73,11 @@ func _physics_process(_delta: float) -> void:
 				can_attack = false
 				current_weapon.fire()
 				timer.start(current_weapon.attack_rate)
-			elif current_weapon.weapon_type == "consumable":
-				current_weapon.use()
-				current_weapon.count -= 1
-				if current_weapon.count <= 0:
-					tool_bar_slots.drop_item(tool_bar_slots.current_item)
+		if current_weapon.weapon_type == "consumable" and Input.is_action_just_pressed("use_item"):
+			current_weapon.use()
+			current_weapon.count -= 1
+			if current_weapon.count <= 0:
+				tool_bar_slots.remove_item(tool_bar_slots.current_item)
 func die():
 	print("dead")
 	$AnimatedSprite2D.animation = "die"

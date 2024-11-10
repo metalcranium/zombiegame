@@ -10,6 +10,7 @@ var can_drag: bool = false
 @onready var health_potion = preload("res://Items/health_potion.tscn")
 
 func _process(_delta: float):
+	print(get_parent())
 	if can_drag:
 		drag_item()
 func drag_item():

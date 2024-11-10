@@ -3,9 +3,7 @@
 [ext_resource type="Script" path="res://Weapons/bow.gd" id="1_2tcqu"]
 [ext_resource type="Texture2D" uid="uid://onb7tgx4yav7" path="res://Assets/bow.png" id="2_gga5o"]
 
-[node name="Bow" type="CharacterBody2D"]
+[node name="Bow" type="Sprite2D"]
 texture_filter = 1
-script = ExtResource("1_2tcqu")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_gga5o")
+script = ExtResource("1_2tcqu")

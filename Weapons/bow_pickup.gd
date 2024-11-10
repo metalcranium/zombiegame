@@ -1,15 +1,24 @@
 extends Area2D
-@onready var boww = preload("res://Weapons/bow.tscn")
+@onready var bow = preload("res://Weapons/bow.tscn")
+var can_pickup: bool = false
+var hero: Node2D = null
 
-func _on_body_entered(body: Node2D) -> void:
-	if Input.is_action_pressed("interact"):
-		var bow = boww.instantiate()
-		bow.position = body.position
-		body.add_child(bow)
-		for i in range(len(body.tool_bar)):
-			if body.tool_bar[i] != null:
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("interact") and can_pickup == true:
+		var boww = bow.instantiate()
+		for i in hero.inventory.size():
+			if hero.inventory[i] != null:
 				pass
 			else:
-				body.tool_bar[i] = bow
+				hero.inventory[i] = boww
+				queue_free()
 				break
-		queue_free()
+
+func _on_body_entered(body: Node2D) -> void:
+	can_pickup = true
+	hero = body
+
+
+func _on_body_exited(body: Node2D) -> void:
+	can_pickup = false
+	hero = null

@@ -8,15 +8,14 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and can_pickup == true:
 		
 		var weapon = fire_staff.instantiate()
-		hero.add_child(weapon)
 		for i in range(len(hero.tool_bar)):
-			if hero.tool_bar[i] != null:
+			if hero.inventory[i] != null:
 				pass
 			else:
-				hero.tool_bar[i] = weapon
-
+				hero.inventory[i] = weapon
+				queue_free()
 				break
-		queue_free()
+		
 
 func _on_body_exited(body:Node2D) -> void:
 	can_pickup = false

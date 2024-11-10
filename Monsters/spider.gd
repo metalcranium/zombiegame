@@ -15,7 +15,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 	if health <= 0:
-		get_parent().spider_count -= 1
+		#get_parent().spider_count -= 1
 		queue_free()
 
 

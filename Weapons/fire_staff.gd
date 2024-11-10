@@ -1,4 +1,4 @@
-extends Node2D
+extends Sprite2D
 
 @onready var fire_ball = preload("res://Weapons/fire_ball.tscn")
 @onready var main = get_node("/root/Main")
@@ -9,10 +9,14 @@ const mana_cost = 5
 const weapon_type: String = "ranged"
 var attack_rate:float = 0.5
 var parent: Node2D
+var can_drag: bool = false
 
 func _ready():
 	parent = get_parent()
 	print(parent)
+func _process(delta: float) -> void:
+	if can_drag:
+		drag_item()
 func fire():
 	if get_parent().mana >= mana_cost:
 		fire_ball_1()
@@ -42,4 +46,6 @@ func drop():
 	print("position")
 	main.add_child(staff)
 	print("weapon dropped")
+func drag_item():
+	position = get_global_mouse_position()
 	
