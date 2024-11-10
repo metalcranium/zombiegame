@@ -81,6 +81,7 @@ bg_color = Color(0, 0.701961, 0.0235294, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ttj5j"]
 
 [node name="Hero" type="CharacterBody2D"]
+z_index = 1
 position = Vector2(2, -1)
 collision_layer = 2
 collision_mask = 5
@@ -98,7 +99,7 @@ frame_progress = 0.141578
 shape = SubResource("CapsuleShape2D_vlbou")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(-1, -1)
 zoom = Vector2(2, 2)
 limit_left = -56
 limit_top = -56
@@ -172,6 +173,7 @@ scale = Vector2(-3.39818, -3.29067)
 shape = SubResource("CircleShape2D_ttj5j")
 
 [node name="ToolBar" parent="." instance=ExtResource("9_42gv3")]
+z_index = 10
 offset_left = -134.0
 offset_top = 181.0
 offset_right = -134.0
@@ -179,6 +181,7 @@ offset_bottom = 181.0
 scale = Vector2(0.629397, 0.676503)
 
 [node name="Inventory" parent="." instance=ExtResource("10_pq4o6")]
+z_index = 10
 offset_left = 78.0
 offset_top = -96.0
 offset_right = 78.0

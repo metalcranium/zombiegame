@@ -6,9 +6,8 @@ var hero: Node2D = null
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and can_pickup == true:
-		
 		var weapon = fire_staff.instantiate()
-		for i in range(len(hero.tool_bar)):
+		for i in hero.inventory.size():
 			if hero.inventory[i] != null:
 				pass
 			else:

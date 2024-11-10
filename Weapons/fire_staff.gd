@@ -42,10 +42,11 @@ func fire_ball_2():
 func drop():
 	var staff = weapon_drop.instantiate()
 	print(staff)
-	staff.position = get_parent().position
+	staff.position = get_global_mouse_position()
 	print("position")
 	main.add_child(staff)
 	print("weapon dropped")
+	queue_free()
 func drag_item():
 	position = get_global_mouse_position()
 	

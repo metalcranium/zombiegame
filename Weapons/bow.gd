@@ -27,7 +27,7 @@ func drag_item():
 func drop():
 	var weapon = item_pickup.instantiate()
 	print("weapon instantiated")
-	weapon.position = get_parent().position
+	weapon.position = get_global_mouse_position()
 	print("weapon position")
 	main.add_child(weapon)
 	print(weapon)

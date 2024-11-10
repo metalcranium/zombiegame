@@ -19,7 +19,6 @@ func _process(_delta: float) -> void:
 		current_item = 0
 		select_item(current_item)
 		
-		
 	if Input.is_action_just_pressed("slot2"):
 		current_item = 1
 		select_item(current_item)
@@ -47,6 +46,8 @@ func _process(_delta: float) -> void:
 				inventory.selected_item.can_drag = true
 			else:
 				pass
+		elif can_select and Input.is_action_just_pressed("secondary"):
+			slots[slot_index].use()
 func update_inventory():
 	slots = get_parent().get_tool_bar()
 	for i in range(len(slots)):
@@ -61,7 +62,6 @@ func add_item(index):
 			if Input.is_action_just_released("fire"):
 				get_parent().tool_bar[index] = inventory.selected_item.duplicate()
 				get_parent().add_child(get_parent().tool_bar[index])
-				print("item added: ",get_parent().tool_bar[index])
 				print("image texture: ", get_parent().tool_bar[index].image_texture)
 				inventory.selected_item.queue_free()
 				inventory.selected_item = null
@@ -72,7 +72,7 @@ func add_item(index):
 		
 func select_item(index):
 	if slots[index] != null:
-		get_parent().current_weapon = get_parent().tool_bar[index]
+		get_parent().current_weapon = slots[index]
 		print(get_parent().current_weapon)
 	else:
 		get_parent().current_weapon = null

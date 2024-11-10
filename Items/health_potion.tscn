@@ -6,6 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oooui"]
 
 [node name="HealthPotion" type="Sprite2D"]
+z_index = 2
 texture = ExtResource("2_eq1ng")
 script = ExtResource("1_kp666")
 
@@ -13,8 +14,5 @@ script = ExtResource("1_kp666")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_oooui")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_eq1ng")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
