@@ -174,11 +174,11 @@ shape = SubResource("CircleShape2D_ttj5j")
 
 [node name="ToolBar" parent="." instance=ExtResource("9_42gv3")]
 z_index = 10
-offset_left = -134.0
-offset_top = 181.0
-offset_right = -134.0
-offset_bottom = 181.0
-scale = Vector2(0.629397, 0.676503)
+offset_left = -97.0
+offset_top = 180.0
+offset_right = -97.0
+offset_bottom = 180.0
+scale = Vector2(0.444245, 0.471297)
 
 [node name="Inventory" parent="." instance=ExtResource("10_pq4o6")]
 z_index = 10

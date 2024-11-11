@@ -16,9 +16,9 @@ func _process(delta: float) -> void:
 	position += transform.x * speed * delta
 	
 func _on_kill_enemy_body_entered(body: Node2D) -> void:
-	body.health -= damage
 	var imp = impact.instantiate()
 	imp.position = body.position
 	main.add_child(imp)
+	body.health -= damage
 	queue_free()
 	
