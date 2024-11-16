@@ -19,7 +19,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	progress_bar.value = health
 	if target != null:
-		velocity = position.direction_to(target.position).normalized() * current_speed
+		
 		chase()
 	else:
 		idle()
@@ -58,6 +58,7 @@ func idle():
 	current_speed = 0
 	$AnimatedSprite2D.animation = "idle"
 func chase():
+	velocity = position.direction_to(target.position).normalized() * current_speed
 	current_speed = speed
 	if position.x < target.position.x:
 		$AnimatedSprite2D.animation = "walk"

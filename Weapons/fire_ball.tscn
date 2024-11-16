@@ -27,7 +27,7 @@ sprite_frames = SubResource("SpriteFrames_2kwtk")
 animation = &"shoot"
 
 [node name="KillEnemy" parent="." instance=ExtResource("8_66g6w")]
-position = Vector2(0, 1)
+position = Vector2(0, 1.19209e-07)
 scale = Vector2(0.944444, 0.47)
 collision_mask = 12
 script = null

@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var main = get_node("/root/Main")
-var damage: int = 5
+var damage: int = 1
 var speed: int = 300
 @onready var impact = preload("res://Weapons/fire_ball_impact.tscn")
 var source = null
