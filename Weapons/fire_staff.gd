@@ -24,8 +24,9 @@ func fire():
 func fire_ball_1():
 	var flame = fire_ball.instantiate()
 	flame.position = get_parent().position
+	flame.source = get_parent()
+	print("fire ball parent: ", flame.source)
 	main.add_child(flame)
-	print("fire")
 	get_parent().mana -= mana_cost
 func fire_ball_2():
 	var new_attack_rate: float = 0.25
@@ -43,9 +44,7 @@ func drop():
 	var staff = weapon_drop.instantiate()
 	print(staff)
 	staff.position = get_global_mouse_position()
-	print("position")
 	main.add_child(staff)
-	print("weapon dropped")
 	queue_free()
 func drag_item():
 	position = get_global_mouse_position()

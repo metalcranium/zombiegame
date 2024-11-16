@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 var max_health: int = 10
 var health: int = max_health
-var speed: int = 0
+var speed: int = 50
 @onready var hero = get_node("/root/Main/Hero")
 var target: Node2D = null
 func _ready():
-	print("spider", + position)
+	print(target)
 func _physics_process(_delta: float) -> void:
 	if target != null:
 		velocity = position.direction_to(target.position).normalized() * speed
@@ -15,6 +15,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 	if health <= 0:
+		target.xp += 1
 		#get_parent().spider_count -= 1
 		queue_free()
 

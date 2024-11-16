@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var max_health: int = 30
 var health: int = max_health
-var speed: int = 50
+var speed: int = 25
 var current_speed: int = speed
 var xp_value: int = 15
 var target: Node2D = null

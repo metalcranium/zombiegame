@@ -33,6 +33,7 @@ func _physics_process(delta: float) -> void:
 func die():
 	print("Enemy died")
 	print("You gained ", + xp_value, " xp points!")
+	target.xp += 2
 	drop_orb()
 	queue_free()
 	main.score += 1
