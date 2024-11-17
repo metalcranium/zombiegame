@@ -4,9 +4,12 @@ extends Control
 @onready var main = get_node("/root/Main/")
 @onready var inventory = get_node("/root/Main/Hero/Inventory")
 @onready var slots = get_parent().tool_bar
+@onready var inv = get_parent().inventory
+
 var current_item = null
 var can_select: bool = false
 var slot_index = null
+var origin_index = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#slots = get_parent().get_tool_bar()
@@ -37,17 +40,24 @@ func _process(_delta: float) -> void:
 		pass
 	else:
 		if inventory.selected_item != null and Input.is_action_just_released("fire"):
-			add_item(slot_index)
-		if can_select and Input.is_action_pressed("fire"):
 			if slots[slot_index] != null:
+				pass
+			else:
+				add_item(slot_index)
+		if can_select and Input.is_action_pressed("fire"):
+			if slots[slot_index] != null and inventory.selected_item == null:
 				inventory.selected_item = slots[slot_index].duplicate()
+				origin_index = slot_index
 				slots[slot_index] = null
 				main.add_child(inventory.selected_item)
 				inventory.selected_item.can_drag = true
 			else:
 				pass
 		elif can_select and Input.is_action_just_pressed("secondary"):
-			slots[slot_index].use()
+			if slots[slot_index] != null:
+				slots[slot_index].use()
+			else:
+				pass
 func update_inventory():
 	slots = get_parent().get_tool_bar()
 	for i in range(len(slots)):
@@ -56,19 +66,33 @@ func update_inventory():
 		else:
 			remove_item(i)
 func add_item(index):
-	if get_parent().tool_bar[index] == null:
+	if slots[index] == null:
 		if inventory.selected_item != null:
-			print(inventory.selected_item.position)
 			if Input.is_action_just_released("fire"):
-				get_parent().tool_bar[index] = inventory.selected_item.duplicate()
-				get_parent().add_child(get_parent().tool_bar[index])
-				print("image texture: ", get_parent().tool_bar[index].image_texture)
+				slots[index] = inventory.selected_item.duplicate()
+				#get_parent().add_child(slots[index])
 				inventory.selected_item.queue_free()
 				inventory.selected_item = null
 				update_inventory()
 			inventory.can_drop = false
 	else:
 		pass
+func swap_item(slot_index):
+	if inventory.inv_items[inventory.origin_index]:
+		inventory.inv_items[inventory.origin_index] = slots[slot_index]
+		slots[slot_index] = inventory.selected_item.duplicate()
+		inventory.origin_index = null
+		inventory.selected_item.queue_free()
+		inventory.selected_item = null
+	elif slots[origin_index]:
+		if slots[slot_index]:
+			slots[origin_index] = slots[slot_index]
+			slots[slot_index] = inventory.selected_item.duplicate()
+			slots[origin_index] = null
+			inventory.selected_item.queue_free()
+			inventory.selected_item = null
+	
+		
 		
 func select_item(index):
 	if slots[index] != null:

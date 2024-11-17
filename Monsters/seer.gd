@@ -17,7 +17,6 @@ var target: Node2D = null
 func _ready():
 	pass
 func _physics_process(_delta: float) -> void:
-	print("can attack: ", can_attack)
 	progress_bar.value = health
 	if target != null:
 		chase()

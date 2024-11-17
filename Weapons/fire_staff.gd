@@ -13,7 +13,6 @@ var can_drag: bool = false
 
 func _ready():
 	parent = get_parent()
-	print(parent)
 func _process(delta: float) -> void:
 	if can_drag:
 		drag_item()
